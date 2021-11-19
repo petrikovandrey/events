@@ -8,7 +8,7 @@
 
 section {
     margin: 1px 20px;
-    /* so you don't need this any more */
+    cursor: url(/src/img/molot.png), auto;
 }
 
 html {

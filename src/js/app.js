@@ -1,10 +1,19 @@
+const dead = document.getElementById("dead");
+const lost = document.getElementById("lost");
+const sizeBoard = 16;
+
+function clearStat() {
+  lost.textContent = 0;
+  dead.textContent = 0;
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
 function updateBord() {
   setInterval(() => {
-    let randomN = getRandomInt(16);
+    let randomN = getRandomInt(sizeBoard);
     const img = document.querySelector('img');
     if (img != null) {
       while (randomN === img.parentNode.id) {
@@ -18,10 +27,26 @@ function updateBord() {
   }, 2000);
 }
 
+function checkClick() {
+
+  if (this.hasChildNodes()) {
+    dead.textContent++;
+    if (dead.textContent === "10") {
+      alert("You are the winner!");
+      clearStat();
+    }
+  } else {
+    lost.textContent++;
+    if (lost.textContent === "5") {
+      alert("You are the loser!");
+      clearStat();
+    }
+  }
+}
+
 function startMain() {
   const content = document.querySelector('section');
-  const sizeBoard = 4;
-  const randomN = getRandomInt(sizeBoard ** 2);
+  const randomN = getRandomInt(sizeBoard);
   let n = 0;
 
   for (let i = 0; i < sizeBoard; i += 1) {
@@ -33,6 +58,7 @@ function startMain() {
             ${imgGoblin}
               </div>`;
       content.insertAdjacentHTML('afterbegin', div);
+      div.onClick = checkClick;
       n += 1;
     }
   }
