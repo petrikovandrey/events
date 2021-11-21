@@ -2,7 +2,6 @@ const dead = document.getElementById("dead");
 const lost = document.getElementById("lost");
 const sizeBoard = 4;
 
-
 function clearStat() {
   lost.textContent = 0;
   dead.textContent = 0;
@@ -13,16 +12,16 @@ function getRandomInt(max) {
 }
 
 function checkClick() {
-  let w = document.querySelectorAll('.square');
+  const w = document.querySelectorAll('.square');
   Array.from(w).forEach(element => element.addEventListener('click', function () {
     if (element.childNodes.length > 1) {
-      dead.textContent++;
+      dead.textContent = Number(dead.textContent) + 1;
       if (dead.textContent === "10") {
         alert("You are the winner!");
         clearStat();
       }
     } else {
-      lost.textContent++;
+      lost.textContent = Number(dead.textContent) + 1;
       if (lost.textContent === "5") {
         alert("You are the loser!");
         clearStat();
@@ -30,7 +29,6 @@ function checkClick() {
     }
   }))
 }
-
 
 function updateBord() {
 
@@ -55,7 +53,7 @@ function startMain() {
   let n = 0;
 
   for (let i = 0; i < sizeBoard; i += 1) {
-    let imgGoblin = '<img class="center" src=https://github.com/netology-code/ahj-homeworks/raw/simplification/dom/pic/goblin.png>';
+    const imgGoblin = '<img class="center" src=https://github.com/netology-code/ahj-homeworks/raw/simplification/dom/pic/goblin.png>';
     for (let b = 0; b < sizeBoard; b += 1) {
       const imgElement = (n === randomN) ? imgGoblin : '';
 
