@@ -10,28 +10,29 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
             },
-            {
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                }, ],
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader',
-                ],
-            },
-            {
-                test: /\.svg$/,
-                type: 'asset/resource',
-            },
+        },
+        {
+            test: /\.html$/,
+            use: [{
+                loader: 'html-loader',
+            },],
+        },
+        {
+            test: /\.css$/,
+            use: [
+                MiniCssExtractPlugin.loader, 'css-loader',
+            ],
+        },
+
+        {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        },
 
         ],
     },
