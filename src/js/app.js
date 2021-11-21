@@ -1,5 +1,5 @@
-const dead = document.getElementById("dead");
-const lost = document.getElementById("lost");
+const dead = document.getElementById('dead');
+const lost = document.getElementById('lost');
 const sizeBoard = 4;
 
 function clearStat() {
@@ -13,25 +13,24 @@ function getRandomInt(max) {
 
 function checkClick() {
   const w = document.querySelectorAll('.square');
-  Array.from(w).forEach(element => element.addEventListener('click', function () {
+  Array.from(w).forEach((element) => element.addEventListener('click', () => {
     if (element.childNodes.length > 1) {
       dead.textContent = Number(dead.textContent) + 1;
-      if (dead.textContent === "10") {
-        alert("You are the winner!");
+      if (dead.textContent === '10') {
+        alert('You are the winner!');
         clearStat();
       }
     } else {
       lost.textContent = Number(dead.textContent) + 1;
-      if (lost.textContent === "5") {
-        alert("You are the loser!");
+      if (lost.textContent === '5') {
+        alert('You are the loser!');
         clearStat();
       }
     }
-  }))
+  }));
 }
 
 function updateBord() {
-
   setInterval(() => {
     let randomN = getRandomInt(sizeBoard ** 2);
     const img = document.querySelector('img');
