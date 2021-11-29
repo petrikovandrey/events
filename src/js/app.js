@@ -17,12 +17,14 @@ function checkClick() {
     if (element.childNodes.length > 1) {
       dead.textContent = Number(dead.textContent) + 1;
       if (dead.textContent === '10') {
+        // eslint-disable-next-line no-alert
         alert('You are the winner!');
         clearStat();
       }
     } else {
-      lost.textContent = Number(dead.textContent) + 1;
+      lost.textContent = Number(lost.textContent) + 1;
       if (lost.textContent === '5') {
+        // eslint-disable-next-line no-alert
         alert('You are the loser!');
         clearStat();
       }
