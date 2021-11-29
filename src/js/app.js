@@ -1,3 +1,5 @@
+import srcGoblin from '../img/goblin.png';
+
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
 const sizeBoard = 4;
@@ -43,7 +45,7 @@ function updateBord() {
       }
       img.remove();
       const div = document.getElementById(String(randomN));
-      div.insertAdjacentHTML('afterbegin', '<img class="center" src="/src/img/goblin.png">');
+      div.insertAdjacentHTML('afterbegin', `<img class="center" src=${srcGoblin}>`);
     }
   }, 1000);
 }
@@ -54,7 +56,7 @@ function startMain() {
   let n = 0;
 
   for (let i = 0; i < sizeBoard; i += 1) {
-    const imgGoblin = '<img class="center" src="/src/img/goblin.png">';
+    const imgGoblin = `<img class="center" src=${srcGoblin}>`;
     for (let b = 0; b < sizeBoard; b += 1) {
       const imgElement = (n === randomN) ? imgGoblin : '';
 
