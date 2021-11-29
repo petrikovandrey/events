@@ -43,7 +43,7 @@ function updateBord() {
       }
       img.remove();
       const div = document.getElementById(String(randomN));
-      div.insertAdjacentHTML('afterbegin', '<img class="center" src=https://github.com/netology-code/ahj-homeworks/raw/simplification/dom/pic/goblin.png>');
+      div.insertAdjacentHTML('afterbegin', '<img class="center" src="/src/img/goblin.png">');
     }
   }, 1000);
 }
@@ -54,7 +54,7 @@ function startMain() {
   let n = 0;
 
   for (let i = 0; i < sizeBoard; i += 1) {
-    const imgGoblin = '<img class="center" src=https://github.com/netology-code/ahj-homeworks/raw/simplification/dom/pic/goblin.png>';
+    const imgGoblin = '<img class="center" src="/src/img/goblin.png">';
     for (let b = 0; b < sizeBoard; b += 1) {
       const imgElement = (n === randomN) ? imgGoblin : '';
 
