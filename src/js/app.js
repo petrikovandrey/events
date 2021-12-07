@@ -1,4 +1,5 @@
-import srcGoblin from '../img/goblin.png';
+import srcGoblin from '../../src/img/goblin.png';
+// import srcGoblin from '../img/goblin.png';
 
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
