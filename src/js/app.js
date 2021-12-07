@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-useless-path-segments
 import srcGoblin from '../../src/img/goblin.png';
 // import srcGoblin from '../img/goblin.png';
 
