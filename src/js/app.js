@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-useless-path-segments
-import srcGoblin from '../../src/img/goblin.png';
+// import srcGoblin from '../../src/img/goblin.png';
 // import srcGoblin from '../img/goblin.png';
-
+const srcGoblin = 'https://pbs.twimg.com/profile_images/1045580248467886080/_uwwJdr3_400x400.jpg';
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
 const sizeBoard = 4;
