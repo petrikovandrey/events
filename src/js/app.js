@@ -58,12 +58,19 @@ function startMain() {
   let n = 0;
 
   for (let i = 0; i < sizeBoard; i += 1) {
-    const imgGoblin = `<img class="center" src=${srcGoblin}>`;
-    for (let b = 0; b < sizeBoard; b += 1) {
-      const imgElement = (n === randomN) ? imgGoblin : '';
+    // const imgGoblin = `<img class="center" src=${srcGoblin}>`;
+    // for (let b = 0; b < sizeBoard; b += 1) {
+    //   const imgElement = (n === randomN) ? imgGoblin : '';
 
+    //   const div = `<div class = "square" id=${String(n)}>
+    //         ${imgElement}
+    //           </div>`;
+    //   content.insertAdjacentHTML('afterbegin', div);
+    //   n += 1;
+    // }
+    const imgGoblin = '<img class="center">';
+    for (let b = 0; b < sizeBoard; b += 1) {
       const div = `<div class = "square" id=${String(n)}>
-            ${imgElement}
               </div>`;
       content.insertAdjacentHTML('afterbegin', div);
       n += 1;
