@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-useless-path-segments
-// import srcGoblin from '../../src/img/goblin.png';
-// import srcGoblin from '../img/goblin.png';
-// const srcGoblin = 'https://pbs.twimg.com/profile_images/1045580248467886080/_uwwJdr3_400x400.jpg';
+import srcGoblin from '../../src/img/goblin.png';
+
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
 const sizeBoard = 4;
@@ -16,40 +15,40 @@ function getRandomInt(max) {
 }
 
 function checkClick() {
-  // const w = document.querySelectorAll('.square');
-  // Array.from(w).forEach((element) => element.addEventListener('click', () => {
-  //   if (element.childNodes.length > 1) {
-  //     dead.textContent = Number(dead.textContent) + 1;
-  //     if (dead.textContent === '10') {
-  //       // eslint-disable-next-line no-alert
-  //       alert('You are the winner!');
-  //       clearStat();
-  //     }
-  //   } else {
-  //     lost.textContent = Number(lost.textContent) + 1;
-  //     if (lost.textContent === '5') {
-  //       // eslint-disable-next-line no-alert
-  //       alert('You are the loser!');
-  //       clearStat();
-  //     }
-  //   }
-  // }));
+  const w = document.querySelectorAll('.square');
+  Array.from(w).forEach((element) => element.addEventListener('click', () => {
+    if (element.childNodes.length > 1) {
+      dead.textContent = Number(dead.textContent) + 1;
+      if (dead.textContent === '10') {
+        // eslint-disable-next-line no-alert
+        alert('You are the winner!');
+        clearStat();
+      }
+    } else {
+      lost.textContent = Number(lost.textContent) + 1;
+      if (lost.textContent === '5') {
+        // eslint-disable-next-line no-alert
+        alert('You are the loser!');
+        clearStat();
+      }
+    }
+  }));
 }
 
 function updateBord() {
-  // setInterval(() => {
-  //   let randomN = getRandomInt(sizeBoard ** 2);
-  //   const img = document.querySelector('img');
+  setInterval(() => {
+    let randomN = getRandomInt(sizeBoard ** 2);
+    const img = document.querySelector('img');
 
-  //   if (img != null) {
-  //     while (randomN === img.parentNode.id) {
-  //       randomN = getRandomInt(sizeBoard ** 2);
-  //     }
-  //     img.remove();
-  //     const div = document.getElementById(String(randomN));
-  //     div.insertAdjacentHTML('afterbegin', `<img class="center" src=${srcGoblin}>`);
-  //   }
-  // }, 1000);
+    if (img != null) {
+      while (randomN === img.parentNode.id) {
+        randomN = getRandomInt(sizeBoard ** 2);
+      }
+      img.remove();
+      const div = document.getElementById(String(randomN));
+      div.insertAdjacentHTML('afterbegin', `<img class="center" src=${srcGoblin}>`);
+    }
+  }, 1000);
 }
 
 function startMain() {
@@ -58,19 +57,12 @@ function startMain() {
   let n = 0;
 
   for (let i = 0; i < sizeBoard; i += 1) {
-    // const imgGoblin = `<img class="center" src=${srcGoblin}>`;
-    // for (let b = 0; b < sizeBoard; b += 1) {
-    //   const imgElement = (n === randomN) ? imgGoblin : '';
-
-    //   const div = `<div class = "square" id=${String(n)}>
-    //         ${imgElement}
-    //           </div>`;
-    //   content.insertAdjacentHTML('afterbegin', div);
-    //   n += 1;
-    // }
-    const imgGoblin = '<img class="center">';
+    const imgGoblin = `<img class="center" src=${srcGoblin}>`;
     for (let b = 0; b < sizeBoard; b += 1) {
+      const imgElement = (n === randomN) ? imgGoblin : '';
+
       const div = `<div class = "square" id=${String(n)}>
+            ${imgElement}
               </div>`;
       content.insertAdjacentHTML('afterbegin', div);
       n += 1;
