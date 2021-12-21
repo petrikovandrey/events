@@ -16,40 +16,40 @@ function getRandomInt(max) {
 }
 
 function checkClick() {
-  const w = document.querySelectorAll('.square');
-  Array.from(w).forEach((element) => element.addEventListener('click', () => {
-    if (element.childNodes.length > 1) {
-      dead.textContent = Number(dead.textContent) + 1;
-      if (dead.textContent === '10') {
-        // eslint-disable-next-line no-alert
-        alert('You are the winner!');
-        clearStat();
-      }
-    } else {
-      lost.textContent = Number(lost.textContent) + 1;
-      if (lost.textContent === '5') {
-        // eslint-disable-next-line no-alert
-        alert('You are the loser!');
-        clearStat();
-      }
-    }
-  }));
+  // const w = document.querySelectorAll('.square');
+  // Array.from(w).forEach((element) => element.addEventListener('click', () => {
+  //   if (element.childNodes.length > 1) {
+  //     dead.textContent = Number(dead.textContent) + 1;
+  //     if (dead.textContent === '10') {
+  //       // eslint-disable-next-line no-alert
+  //       alert('You are the winner!');
+  //       clearStat();
+  //     }
+  //   } else {
+  //     lost.textContent = Number(lost.textContent) + 1;
+  //     if (lost.textContent === '5') {
+  //       // eslint-disable-next-line no-alert
+  //       alert('You are the loser!');
+  //       clearStat();
+  //     }
+  //   }
+  // }));
 }
 
 function updateBord() {
-  setInterval(() => {
-    let randomN = getRandomInt(sizeBoard ** 2);
-    const img = document.querySelector('img');
+  // setInterval(() => {
+  //   let randomN = getRandomInt(sizeBoard ** 2);
+  //   const img = document.querySelector('img');
 
-    if (img != null) {
-      while (randomN === img.parentNode.id) {
-        randomN = getRandomInt(sizeBoard ** 2);
-      }
-      img.remove();
-      const div = document.getElementById(String(randomN));
-      div.insertAdjacentHTML('afterbegin', `<img class="center" src=${srcGoblin}>`);
-    }
-  }, 1000);
+  //   if (img != null) {
+  //     while (randomN === img.parentNode.id) {
+  //       randomN = getRandomInt(sizeBoard ** 2);
+  //     }
+  //     img.remove();
+  //     const div = document.getElementById(String(randomN));
+  //     div.insertAdjacentHTML('afterbegin', `<img class="center" src=${srcGoblin}>`);
+  //   }
+  // }, 1000);
 }
 
 function startMain() {
